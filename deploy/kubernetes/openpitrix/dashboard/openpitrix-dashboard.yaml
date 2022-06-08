@@ -24,7 +24,7 @@ spec:
     targetPort: ${WEBSOCKET_PORT}
     ${WEBSOCKET_NODEPORT}
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: openpitrix-dashboard-deployment

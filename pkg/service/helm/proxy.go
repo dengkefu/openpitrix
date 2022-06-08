@@ -595,7 +595,7 @@ func (proxy *Proxy) getPodsByClusterRole(namespace string, clusterRole *models.C
 				return nil, err
 			}
 			return pods, nil
-		case "apps/v1beta2":
+		case "apps/v1":
 			deployment, err := kubeClient.AppsV1beta2().Deployments(namespace).Get(proxy.ctx, deploymentName, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
@@ -657,7 +657,7 @@ func (proxy *Proxy) getPodsByClusterRole(namespace string, clusterRole *models.C
 				return nil, err
 			}
 			return pods, nil
-		case "apps/v1beta2":
+		case "apps/v1":
 			statefulSet, err := kubeClient.AppsV1beta2().StatefulSets(namespace).Get(proxy.ctx, statefulSetName, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
@@ -706,7 +706,7 @@ func (proxy *Proxy) getPodsByClusterRole(namespace string, clusterRole *models.C
 				return nil, err
 			}
 			return pods, nil
-		case "apps/v1beta2":
+		case "apps/v1":
 			daemonSet, err := kubeClient.AppsV1beta2().DaemonSets(namespace).Get(proxy.ctx, daemonSetName, metav1.GetOptions{})
 			if err != nil {
 				return nil, err

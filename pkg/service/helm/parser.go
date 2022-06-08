@@ -19,7 +19,7 @@ import (
 	"helm.sh/helm/v3/pkg/releaseutil"
 	appsv1 "k8s.io/api/apps/v1"
 	appsv1beta1 "k8s.io/api/apps/v1beta1"
-	appsv1beta2 "k8s.io/api/apps/v1beta2"
+	appsv1beta2 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	exv1beta1 "k8s.io/api/extensions/v1beta1"
 	k8syaml "k8s.io/apimachinery/pkg/util/yaml"
