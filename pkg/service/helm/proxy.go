@@ -31,7 +31,7 @@ import (
 	"helm.sh/helm/v3/pkg/chart"
 	"helm.sh/helm/v3/pkg/release"
 	corev1 "k8s.io/api/core/v1"
-	"k8s.io/api/extensions/v1beta1"
+	"k8s.io/api/apps/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	"openpitrix.io/openpitrix/pkg/models"
@@ -623,7 +623,7 @@ func (proxy *Proxy) getPodsByClusterRole(namespace string, clusterRole *models.C
 				return nil, err
 			}
 			return pods, nil
-		case "extensions/v1beta1":
+		case "apps/v1":
 			deployment, err := kubeClient.ExtensionsV1beta1().Deployments(namespace).Get(proxy.ctx, deploymentName, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
@@ -721,7 +721,7 @@ func (proxy *Proxy) getPodsByClusterRole(namespace string, clusterRole *models.C
 				return nil, err
 			}
 			return pods, nil
-		case "extensions/v1beta1":
+		case "apps/v1":
 			daemonSet, err := kubeClient.ExtensionsV1beta1().DaemonSets(namespace).Get(proxy.ctx, daemonSetName, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
