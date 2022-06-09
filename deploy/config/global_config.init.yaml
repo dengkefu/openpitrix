@@ -27,7 +27,7 @@ job:
 task:
   max_working_tasks: 20
 pilot:
-  ip: 121.37.99.70
+  ip: 127.0.0.1
   port: 9114
 basic_config:
   platform_name: OpenPitrix
