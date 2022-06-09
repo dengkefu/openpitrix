@@ -25,7 +25,7 @@ spec:
         imagePullPolicy: IfNotPresent
         command: ['sh', '-c', 'until nc -z openpitrix-db.${NAMESPACE}.svc 3306; do echo "waiting for mysql"; sleep 2; done;']
       containers:
-      - command: ["flyway", "-X", "-url=jdbc:mysql://openpitrix-db.${NAMESPACE}.svc/runtime", "-user=root", "-validateOnMigrate=false", "-locations=filesystem:/flyway/sql/runtime", "migrate"]
+      - command: ["flyway", "-X", "-url=jdbc:mysql://openpitrix-db.${NAMESPACE}.svc/runtime", "-user=root", "-validateOnMigrate=false", "-locations=filesystem:/flyway/sql/runtime.sql", "migrate"]
         env:
         - name: FLYWAY_PASSWORD
           valueFrom:
